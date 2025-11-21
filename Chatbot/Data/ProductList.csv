@@ -1,0 +1,169 @@
+﻿varenummer;varetekst;Service (ID);Service (Navn)
+22033;PSD2 Fraud Report;Fraud03;Reporting
+22813;Apple and Google Pay fraud reporting;Fraud03;Reporting
+20556;OTP sent as SMS, authentication;2014-0007;3-D Secure with dynamic password (OTP)
+20557;3-D Secure authentication (VEReq);2014-0007;3-D Secure with dynamic password (OTP)
+20561;3-D Secure annual card fee;2014-0007;3-D Secure with dynamic password (OTP)
+20562;SMS OTP enrolment via portal;2014-0007;3-D Secure with dynamic password (OTP)
+22781;Supscription fee - ACS administration;2014-0007;3-D Secure with dynamic password (OTP)
+22782;Supscription fee - use of RBA rules;2014-0007;3-D Secure with dynamic password (OTP)
+23182;Create user - ACS Admin module;2014-0007;3-D Secure with dynamic password (OTP)
+23183;Update user - ACS Admin module;2014-0007;3-D Secure with dynamic password (OTP)
+23037;Issuer E-Com. ID Check STDs KPIs Form ;2014-0007;3-D Secure with dynamic password (OTP)
+20803;Card Blocking- Card credit;2003-0640;Blocking of Cards
+20804;Card Blocking- Card debit;2003-0640;Blocking of Cards
+21442;Call Centre Support - per call;2003-0662;Customer Service 24/7
+21444;24/7 Customer Call Center subscription;2003-0662;Customer Service 24/7
+20695;Cancellation of PIN Blocking;2003-0665;Cancellation of PIN Blocking
+21426;Card Activation - via Customer Service;2003-4494;Card Activated by Cardholder
+21427;Card Activation - via  Voice Respons;2003-4494;Card Activated by Cardholder
+21428;Card Activation - from Issuer;2004-1016;Card Activated by Card Issuer
+20697;Reset PIN Try Counter;2004-1022;Reset Number of Wrong PIN-attempt
+21454;Emergency Cash Service;2005-1685;Emergency Cash Advance
+21445;After working hours Customer Call Center;2007-0012;Customer Service on Evenings/Nights/Weekends/National Holidays
+21423;Change Account Status;2008-0048;Electronic Card Maintenance in Nets' Systems
+21424;Change Card Status;2008-0048;Electronic Card Maintenance in Nets' Systems
+21430;Update Account;2008-0048;Electronic Card Maintenance in Nets' Systems
+21446;Update Card;2008-0048;Electronic Card Maintenance in Nets' Systems
+21193;PIN Reminder;2005-3320;Printing current PIN and sending PIN mailer
+21290;PIN Reminder - abroad;2005-3320;Printing current PIN and sending PIN mailer
+21197;Generation of PIN/PIN Mailer;2003-1096;PIN Production
+21431;Generation of PIN/PIN Mailer - abroad;2003-1096;PIN Production
+199055;PIN-brev retur, model 3;2003-1285;Handling of Undeliverable PIN Mailers
+22096;Approval of individual card design;2007-0006;Approval of Individual Card Design
+21188;Card Order/Create Pers.file - Chip Card;2008-0042;Card Order Processing (F-Pan)
+21189;Card Order/Create Pers.file - Mags. Card;2008-0042;Card Order Processing (F-Pan)
+21190;Deliv. Of Card Personalisation File;2008-0042;Card Order Processing (F-Pan)
+21429;Create Card-On-File;2008-0042;Card Order Processing (F-Pan)
+21573;Fast track card orders - Subscription;2008-0042;Card Order Processing (F-Pan)
+20751;card fee;2003-7026;General Compliance
+20761;General Card Compliance;2003-7026;General Compliance
+20790;Retrieval request, Processing;DI-02;Dispute Management - Second Line
+20791;Chargeback 1 Processing;DI-02;Dispute Management - Second Line
+20792;Chargeback 2 Processing;DI-02;Dispute Management - Second Line
+20793;Chargeback Processing Extended;DI-02;Dispute Management - Second Line
+20795;Urgent Cases Dispute;DI-02;Dispute Management - Second Line
+20805;Cancel subscription;DI-02;Dispute Management - Second Line
+26533;Bank group report - Issuer Dispute;DI-02;Dispute Management - Second Line
+101001;Konsulentydelser Kortudstedelse;2006-4559;Consultancy Services
+22405;3D Secure Small Orders;2006-4559;Consultancy Services
+22406;3D Secure Project Deliveries;2006-4559;Consultancy Services
+22407;3D Secure Other Miscellaneous;2006-4559;Consultancy Services
+22408;Smart Card & PIN Small Orders;2006-4559;Consultancy Services
+22409;Smart Card & PIN Project Deliveries;2006-4559;Consultancy Services
+22410;Smart Card & PIN Other Miscellaneous;2006-4559;Consultancy Services
+22411;Dispute Small Orders;2006-4559;Consultancy Services
+22412;Dispute Project Deliveries;2006-4559;Consultancy Services
+22413;Dispute Other Miscellaneous;2006-4559;Consultancy Services
+22414;Issuer Front-end Processing Small Orders;2006-4559;Consultancy Services
+22415;Issuer Front-end Processing Project Deliveries;2006-4559;Consultancy Services
+22416;Issuer Front-end Processing Other Miscellaneous;2006-4559;Consultancy Services
+22417;CMS Small Orders;2006-4559;Consultancy Services
+22418;CMS Project Deliveries;2006-4559;Consultancy Services
+22419;CMS Other Miscellaneous;2006-4559;Consultancy Services
+20762;Reconciliation Services - Issuing;2004-3963;Reconciliation of Incoming and Outgoing Clearing
+22097;Forwarding bookkeeping entries;2004-3963;Reconciliation of Incoming and Outgoing Clearing
+20772;Reconciliation - Fee Controlling;2005-4303;Fee Controlling
+20770;Creating Entries Relating to Invoice from MasterCard;2005-4304;Creating Entries Relating to Invoice from MasterCard
+20766;Entries rel. to invoice from Visa;2008-0028;Creating Entries Relating to Invoice from Visa
+20769;Quarterly report to card organisation;2008-0060;Quarterly Member Report to Card Organisations
+20702;Fraud Monitoring Active Cards;Fraud02;Fraud Monitoring
+22193;Fraud Prevention;Fraud01;Fraud Prevention  (part of authorisation flow) 
+20884;Lost Card Management-per recovered card;2003-0951;Card Recovery Service
+20596;Transaction Processing;2003-4607;Processing of Clearing Files
+20896;Bilateral switching - per clearing;2014-0014;Clearing Processing – Interchange Network Services (INS)  
+20991;Authorisation processing per event;2003-4614;Authorisation Processing excluding Balance Check
+20920;Bilateral switching - per authorisation;2014-0013;Authorisation Processing – Interchange Network Services (INS)  
+20692;Stand-In Processing;2003-6226;Stand-In Authorisation
+20903;Stand-In Authorisation Processing;2003-6226;Stand-In Authorisation
+20693;In-flight STIP;2003-6226;Stand-In Authorisation
+20598;Addition of Auth. Data to Captures;2004-0064;Addition of Authorisation Data to Clearing Transactions
+21202;ePIN Processing;2016-0005;E-PIN generation and delivery
+21204;E-Pin processing - Subscription;2016-0005;E-PIN generation and delivery
+21205;E-Pin processing - Dankort;2016-0005;E-PIN generation and delivery
+21227;ePIN Processing - per card;2016-0005;E-PIN generation and delivery
+21718;PIN Reminder - (E-Pin);2016-0005;E-PIN generation and delivery
+20799;Mydispute QT cases;DI-03-1;MinIndsigelse QT cases
+20800;Mydispute Prevalidation cases;DI-04;Online Dispute Service (Prevalidation)
+20786;Consumer Protection;Fraud04;Consumer Protection
+20787;Smart Block;Fraud05;Smart Block
+20685;Daily Settlement, MC;2018-0024;Settlement of affiliate members under BOKIS  license
+20681;Daily Settlement, Nets MS;2018-0025;Settlement of affiliate members under BOKIS license – fees and transaction volumes for bilateral transactions 
+22021;Visa Deb&Cred Nets MS–Settl. BOKIS memb.;2018-0025;Settlement of affiliate members under BOKIS license – fees and transaction volumes for bilateral transactions 
+20705;Mydispute subscription active card;DI-03-2;MinIndsigelse Fee
+20801;Mydispute Hotline calls;DI-03;MinIndsigelse
+20802;Mydispute subscription fee;DI-03;MinIndsigelse
+143364;Issuer Processing authorization;2019-0001;Dankort transaction services
+143365;Issuer Processing capture;2019-0001;Dankort transaction services
+143366;Interchange Network services authorisation;2019-0001;Dankort transaction services
+143367;Interchange Network services Capture;2019-0001;Dankort transaction services
+143371;Transaction for mobile;2019-0001;Dankort transaction services
+143137;Card creation;2019-0017;Card order processing
+199031;Card order - hybrid card with chip;2019-0017;Card order processing
+199032;Administrative notice to issuer;2019-0017;Card order processing
+143119;Blocking via Nets customer service;2019-0015;Card administration
+143123;Card blocking;2019-0015;Card administration
+143139;Card deletion;2019-0015;Card administration
+143140;PIN blocking;2019-0015;Card administration
+143141;Revoke PIN blocking;2019-0015;Card administration
+143142;Revoke blocking;2019-0015;Card administration
+21709;Card activation by issuer;2019-0002;Card activation
+196007;Card activation voice response;2019-0002;Card activation
+199029;Card activation by manual;2019-0002;Card activation
+21191;PIN Generation Service;2019-0012;PIN handling
+21194;PIN Reminder/Reorder;2019-0012;PIN handling
+199019;Adjustment of existing PIN letter;2019-0012;PIN handling
+199020;New PIN letter;2019-0012;PIN handling
+143372;Dankort secured by Nets SMS;2019-0004;3-D Secure with dynamic password (OTP)
+143347;General compliance;2019-0018;General compliance - Dankort
+143370;Fraud Management;2019-0005;Fraud Management
+166055;Fraud Management;2019-0005;Fraud Management
+143368;Alert handling (Early warning);2019-0006;Early Warning - Alert Handling and Customer Service
+143337;Individual designs Dankort;2019-0013;Approval of Individual Card Design 
+166048;Individuel kortdesign godkend. Visa/Dan.;2019-0013;Approval of Individual Card Design 
+20544;3-D Secure authentication (VEReq);2017-5002;3-D Secure with dynamic password (OTP)
+20548;3-D Secure annual card fee;2017-5002;3-D Secure with dynamic password (OTP)
+20549;SMS OTP enrolment via portal;2017-5002;3-D Secure with dynamic password (OTP)
+166054;OTP sent as SMS, authentication;2017-5002;3-D Secure with dynamic password (OTP)
+20631;Customer Service 24/7;2017-5006;Customer Service 24/7
+20632;Autorisationsbehandling med f.brugslimit;2017-5008;Authorisation Processing including Balance Check
+20634;Beregning af kursomregningstillæg;2017-2011;Calculation of Currency Convertion Fee
+20636;Adgang til generel kortinfrastruktur;2017-5013;Access to Basic Infrastructure
+20637;Adgang til udstedelsesinfrastruktur;2017-5014;Access to Card Issuing Infrastructure
+20638;Chargeback 1 Processing;2017-5015;Dispute Management - Second Line
+20639;Retrieval Request;2017-5015;Dispute Management - Second Line
+20640;Extended case handling;2017-5015;Dispute Management - Second Line
+20641;Urgent case handling fee;2017-5015;Dispute Management - Second Line
+20646;Cancel subscription;2017-5015;Dispute Management - Second Line
+22483;Chargeback 2 Processing;2017-5015;Dispute Management - Second Line
+20647;Fraud Monitoring Active Cards;2017-5016;Fraud Monitoring
+20648;Elektronisk Nets reset af limit;2017-5017;Electronic Reset of Visa/Dankort limit
+22424;Elec. Iss. Reset of limit - per clearing;2017-5017;Electronic Reset of Visa/Dankort limit
+20649;Reporting of Fraud to Visa;2017-5018;Reporting of Fraud to Visa
+20660;Rapportering af blokerede kort til Visa;2017-5010;Reporting of Blocked Card Numbers to Int Card Organisation
+20691;Addition of Auth. Data to Captures;2017-5020;Addition of Authorisation Data to Clearing Transactions
+166021;Inddragelsesservice;2017-5019;Card Recovery Service
+166056;Transaction processing;2017-5007;Processing of Clearing Files
+23006;Auth. Notification CBPR non-domestic trx;DATA-02;Data and insight services
+172030;Shared design with individual logos - simultaneous approval ;2019-0019;Issuer Card Design
+25421;Virtual Ecom Cards Subscription;LCM-03;Virtual E-Commerce Card (Secure Data Display Services)
+21299;Instant Issuing - Subscription;CDM-01;Card Data Management Services
+25841;3-D Secure MitID req. from portal Broker;2014-0007-MitID-01.01;3-D Secure with dynamic password (OTP) - MitID
+25843;3-D Secure MitID req. from ACS Broker;2014-0007-MitID-01.01;3-D Secure with dynamic password (OTP) - MitID
+25842;3-D Secure MitID req. from portal MitID;2014-0007-MitID-01.01;3-D Secure with dynamic password (OTP) - MitID
+25844;3-D Secure MitID req. from ACS MitID;2014-0007-MitID-01.01;3-D Secure with dynamic password (OTP) - MitID
+26541;VASP Crypto Protection – Subscription;Fraud08; VASP Crypto Platform Protection
+25945;Pre-Chargeback Fraud trx.;DISP-04;Pre-Chargeback
+25946;Pre-Chargeback % Fraud trx.;DISP-04;Pre-Chargeback
+25947;Pre-Chargeback CAP Fraud trx.;DISP-04;Pre-Chargeback
+25948;Pre-Chargeback Non-Fraud trx.;DISP-04;Pre-Chargeback
+25949;Pre-Chargeback % Non-Fraud trx.;DISP-04;Pre-Chargeback
+25950;Pre-Chargeback CAP Non-Fraud trx.;DISP-04;Pre-Chargeback
+26493;Extract/overview of transactions;DATA-04;Clearing Based Reports and Dashboards
+26495;Extract/overview of transactions;DATA-04;Clearing Based Reports and Dashboards
+26496;Extract/overview of transactions;DATA-04;Clearing Based Reports and Dashboards
+26674;Extract/overview of trans over 6 months;DATA-04;Clearing Based Reports and Dashboards
+26675;Extract/overview of trans over 6 months;DATA-04;Clearing Based Reports and Dashboards
+26677;Extract/overview of trans over 6 months;DATA-04;Clearing Based Reports and Dashboards
+26750;Authentications Performance statistics;2014-0007;3-D Secure with dynamic password (OTP)
+26903;Proactive Scanning;Fraud02;Fraud Monitoring

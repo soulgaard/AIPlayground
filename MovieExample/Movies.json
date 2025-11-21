@@ -1,0 +1,162 @@
+[
+  {
+    "title": "The Shawshank Redemption",
+    "plot": "Two imprisoned men bond over years, finding solace and eventual redemption through acts of common decency.",
+    "imdb_rating": 9.3
+  },
+  {
+    "title": "The Godfather",
+    "plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "imdb_rating": 9.2
+  },
+  {
+    "title": "The Dark Knight",
+    "plot": "When the menace known as the Joker emerges from his mysterious past, Batman faces his greatest psychological and physical tests.",
+    "imdb_rating": 9.1
+  },
+  {
+    "title": "The Godfather Part II",
+    "plot": "The early life of Vito Corleone in 1920s New York is portrayed, while his son Michael expands and tightens his grip on the family crime syndicate.",
+    "imdb_rating": 9.0
+  },
+  {
+    "title": "12 Angry Men",
+    "plot": "A jury hold-out attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence in a murder trial.",
+    "imdb_rating": 9.0
+  },
+  {
+    "title": "The Lord of the Rings: The Return of the King",
+    "plot": "Gandalf and Aragorn lead the World of Men against Sauron’s army to draw his gaze from Frodo as he approaches Mount Doom with the One Ring.",
+    "imdb_rating": 9.0
+  },
+  {
+    "title": "Schindler’s List",
+    "plot": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution.",
+    "imdb_rating": 9.0
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "plot": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the One Ring and save Middle-earth from the Dark Lord Sauron.",
+    "imdb_rating": 8.9
+  },
+  {
+    "title": "Pulp Fiction",
+    "plot": "The lives of two mob hitmen, a gangster’s wife, a boxer and others intertwine in a series of unexpected events in Los Angeles.",
+    "imdb_rating": 8.8
+  },
+  {
+    "title": "The Good, the Bad and the Ugly",
+    "plot": "During the American Civil War, three gunslingers hunt for a buried stash of Confederate gold and engage in betrayal, greed and epic showdowns.",
+    "imdb_rating": 8.8
+  },
+  {
+    "title": "The Lord of the Rings: The Two Towers",
+    "plot": "While Frodo and Sam edge closer to Mordor with the One Ring, the divided fellowship makes a stand against Sauron’s forces.",
+    "imdb_rating": 8.8
+  },
+  {
+    "title": "Forrest Gump",
+    "plot": "The story of Forrest Gump, a man with a low IQ, who inadvertently influences several historic events in the 20th century United States.",
+    "imdb_rating": 8.8
+  },
+  {
+    "title": "Fight Club",
+    "plot": "An insomniac office worker and a devil-may-care soap-maker form an underground fight club that evolves into something much, much more.",
+    "imdb_rating": 8.8
+  },
+  {
+    "title": "Inception",
+    "plot": "A thief who steals corporate secrets through dream-sharing technology is given the inverse task: planting an idea into the mind of a CEO.",
+    "imdb_rating": 8.8
+  },
+  {
+    "title": "Star Wars: Episode V – The Empire Strikes Back",
+    "plot": "After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke begins Jedi training while his friends are pursued across the galaxy.",
+    "imdb_rating": 8.7
+  },
+  {
+    "title": "The Matrix",
+    "plot": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "imdb_rating": 8.7
+  },
+  {
+    "title": "Goodfellas",
+    "plot": "The story of Henry Hill and his life in the mob, covering his relationship with wife Karen Hill and his mob partners over three decades.",
+    "imdb_rating": 8.7
+  },
+  {
+    "title": "One Flew Over the Cuckoo’s Nest",
+    "plot": "A criminal pleads insanity and is admitted to a mental institution, where he rebels against the oppressive nurse and rallies the other patients.",
+    "imdb_rating": 8.7
+  },
+  {
+    "title": "Se7en",
+    "plot": "Two detectives hunt a serial killer who uses the seven deadly sins as his motives for each gruesome murder.",
+    "imdb_rating": 8.6
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "plot": "A young FBI trainee seeks the help of an imprisoned, brilliant, and psychopathic cannibal to catch another serial killer.",
+    "imdb_rating": 8.6
+  },
+  {
+    "title": "It’s a Wonderful Life",
+    "plot": "An angel is sent from Heaven to help a desperately frustrated businessman by showing him what life would have been like if he had never existed.",
+    "imdb_rating": 8.6
+  },
+  {
+    "title": "Saving Private Ryan",
+    "plot": "Following the Normandy Landings, a group of U.S. soldiers are tasked with going behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
+    "imdb_rating": 8.6
+  },
+  {
+    "title": "Léon: The Professional",
+    "plot": "Mathilda, a 12-year-old girl, is reluctantly taken in by Léon, a professional assassin, after her family is murdered and their neighbour helps her seek revenge.",
+    "imdb_rating": 8.5
+  },
+  {
+    "title": "The Usual Suspects",
+    "plot": "A sole survivor tells of the twisty events that led up to a horrific gun battle on a boat, involving a mysterious con man known as Keyser Söze.",
+    "imdb_rating": 8.5
+  },
+  {
+    "title": "Interstellar",
+    "plot": "A team of explorers travels through a wormhole in space in an attempt to ensure humanity’s survival as Earth becomes uninhabitable.",
+    "imdb_rating": 8.6
+  },
+  {
+    "title": "City of God",
+    "plot": "In the slums of Rio de Janeiro, two boys’ paths diverge as one becomes a photographer and the other a kingpin of the drug trade.",
+    "imdb_rating": 8.6
+  },
+  {
+    "title": "Spirited Away",
+    "plot": "During her family’s move to the suburbs, a ten-year-old girl enters a world ruled by gods, witches and spirits, and must find her way to free herself and her parents.",
+    "imdb_rating": 8.6
+  },
+  {
+    "title": "The Green Mile",
+    "plot": "The lives of guards on Death Row are affected by one of their charges: a black man accused of murder who has a mysterious gift.",
+    "imdb_rating": 8.6
+  },
+  {
+    "title": "Parasite",
+    "plot": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+    "imdb_rating": 8.6
+  },
+  {
+    "title": "Whiplash",
+    "plot": "A young drummer enrolls at a cut-throat music conservatory where an abusive instructor pushes him to the limits of his ability and his sanity.",
+    "imdb_rating": 8.5
+  },
+  {
+    "title": "Gladiator",
+    "plot": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+    "imdb_rating": 8.5
+  },
+  {
+    "title": "Memento",
+    "plot": "A man with short-term memory loss uses notes and tattoos to hunt for the man he thinks killed his wife.",
+    "imdb_rating": 8.4
+  }
+]

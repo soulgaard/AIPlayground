@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Chatbot.Graph
+﻿namespace Chatbot.Graph
 {
   public class ChartPoint
   {
@@ -33,10 +27,9 @@ namespace Chatbot.Graph
              $"Series: {SeriesName}{Environment.NewLine}" +
              $"Values: {valuesStr}";
     }
-
   }
 
-  // NEW: container for multiple series
+  // Container for multiple series
   public class ChartCollection
   {
     public List<ChartData> SeriesCollection { get; set; } = new();

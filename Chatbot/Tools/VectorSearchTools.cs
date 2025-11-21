@@ -1,11 +1,6 @@
 ﻿using Chatbot.API;
 using Microsoft.Extensions.VectorData;
 using Microsoft.SemanticKernel.Connectors.InMemory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chatbot.Tools
 {
@@ -23,7 +18,7 @@ namespace Chatbot.Tools
       _productCollection = productCollection;
     }
 
-    // Vi vil helst ikke have AI laver vectorsøgning i invoices
+    // Vi vil helst ikke have AI laver vectorsøgning i invoices, da vectorsøgning er bedst til tekstbaseret data
     /*
     private async Task<List<string>> SearchInvoiceVectorStore(string question, int? count = 10)
     {

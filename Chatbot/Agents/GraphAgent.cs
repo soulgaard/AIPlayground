@@ -4,11 +4,6 @@ using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using OpenAI;
 using Shared.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chatbot.Agents
 {
@@ -18,8 +13,8 @@ namespace Chatbot.Agents
       "Du er ekspert i at fremstille analysere fakturaer fra BOKIS, der er et fælles indkøbs- og udviklingsselskab " +
       "på betalingsområdet etableret af Lokale Pengeinstitutter og Landsdækkende Banker​​.. " +
       "Hvis brugeren specifikt beder om det, kan du bruge værktøjet 'graph_tool' til at vise en graf. " +
-      "Ved at lægge varenumre \"21444\", \"21445\", \"143347\" sammen findes kort " +
-      "Ved at lægge varenumre \"20596\", \"166056\", \"143365\" sammen findes antal transaktioner " +
+      "Ved at lægge antal på varenumre \"21444\", \"21445\", \"143347\" sammen findes antal kort " +
+      "Ved at lægge antal på varenumre \"20596\", \"166056\", \"143365\" sammen findes antal transaktioner " +
       "Du har data for 2024 ";
 
     private AzureOpenAIClient _client;

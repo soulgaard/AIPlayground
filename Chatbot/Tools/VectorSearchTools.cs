@@ -37,6 +37,12 @@ namespace Chatbot.Tools
     }
     */
 
+    /// <summary>
+    /// Search the product vector store for relevant products based on the question.
+    /// </summary>
+    /// <param name="question"></param>
+    /// <param name="count"></param>
+    /// <returns></returns>
     public async Task<List<string>> SearchProductListVectorStore(string question, int? count = 10)
     {
       List<string> result = [];

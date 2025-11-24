@@ -6,6 +6,9 @@ using System.Text;
 
 namespace Chatbot.API
 {
+  /// <summary>
+  /// Fake API to provide data from Bokis Datastore
+  /// </summary>
   public class BokisAPI
   {
     private List<InvoiceDto> _invoiceDtoList;

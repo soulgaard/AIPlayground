@@ -9,8 +9,13 @@ using System.Text.Json;
 
 namespace Chatbot.Tools
 {
+  /// <summary>
+  /// Helper class to create tool list for ai agents.
+  /// </summary>
   internal class ToolHelper
   {
+    private const string _productVectorStoreFilename = "..\\..\\..\\..\\Data\\ProductVectorStore.json";
+
     Microsoft.Extensions.AI.IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
     Microsoft.SemanticKernel.Connectors.InMemory.InMemoryVectorStore _vectorStore;
     private BokisAPI _api;
@@ -34,10 +39,14 @@ namespace Chatbot.Tools
          });
     }
 
+    /// <summary>
+    /// Create the tool list for the ai agents.
+    /// If needed, embed and store the product vector store.
+    /// </summary>
+    /// <returns></returns>
     public async Task<List<AITool>> CreateToolListAsync()
     {
       #region Embed and store Product vector store
-      var filename = "C:\\_WS\\AISandbox\\MovieExample\\Data\\ProductVectorStore.json";
       var forceRegeneration = false;
 
       _api.EnsureDataLoaded();
@@ -46,9 +55,9 @@ namespace Chatbot.Tools
         _vectorStore.GetCollection<Guid, ProductVectorStoreRecord>("products");
       await productCollection.EnsureCollectionExistsAsync();
 
-      if (File.Exists(filename) && !forceRegeneration)
+      if (File.Exists(_productVectorStoreFilename) && !forceRegeneration)
       {
-        var json = await File.ReadAllTextAsync(filename);
+        var json = await File.ReadAllTextAsync(_productVectorStoreFilename);
         var records = JsonSerializer.Deserialize<List<ProductVectorStoreRecord>>(json);
 
         foreach (var record in records)
@@ -89,7 +98,7 @@ namespace Chatbot.Tools
         }
 
         var json = JsonSerializer.Serialize(persistedRecords, new JsonSerializerOptions { WriteIndented = true });
-        await File.WriteAllTextAsync(filename, json);
+        await File.WriteAllTextAsync(_productVectorStoreFilename, json);
       }
       #endregion
 

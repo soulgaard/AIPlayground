@@ -5,7 +5,11 @@ namespace Chatbot.Tools
 {
   public class GraphTools
   {
-    // Existing WinForms method
+    /// <summary>
+    /// Open a winform window to show a devexpress graph.
+    /// </summary>
+    /// <param name="chartData"></param>
+    /// <returns></returns>
     public string ShowGraph(ChartCollection chartData)
     {
       var thread = new Thread(() =>

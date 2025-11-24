@@ -31,6 +31,12 @@ var toolList = await toolHelper.CreateToolListAsync();
 // vis antal transaktioner i forhold til antal kort fordelt på kvartaler
 // vis en graf, der illustrerer dette
 
+// Questions for workshop:
+// hvilke produkter har vi, der hedder noget med 3d secure
+// hvad bliver vi faktureret for securer
+// hvad bliver vi faktureret for disse ydelser totalt set fordelt på måneder
+// vis dette som graf
+
 //var agent = new ChatbotAgent(client, model, toolList);
 //await agent.RunAgentAsync();
 

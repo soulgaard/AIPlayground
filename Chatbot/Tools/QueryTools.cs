@@ -223,7 +223,5 @@ namespace Chatbot.Tools
         return new List<AggregateResult> { new AggregateResult("All", aggValue) };
       }
     }
-
-
   }
 }

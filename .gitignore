@@ -370,3 +370,7 @@ FodyWeavers.xsd
 /Chatbot/appsettings.Development.json
 /BokisChatBotApi/BokisChatApi/appsettings.Development.json
 /BokisChatBotApi/BokisChatApi/appsettings.Development.json
+/Chatbot/Data/ProductList.csv
+/BokisChatApplication/Data/ProductList.csv
+/Chatbot/Data/ProductList.csv
+/BokisChatApplication/Data/ProductList.csv

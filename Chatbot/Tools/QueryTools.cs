@@ -189,7 +189,7 @@ namespace Chatbot.Tools
       {
         AggregateField.TotalPrice => i => i.TotalPrice,
         AggregateField.ItemVolume => i => i.ItemVolume ?? 0,
-        AggregateField.ItemCount => i => i.ItemCount,
+        AggregateField.ItemCount => i => (decimal)i.ItemCount,
         _ => i => i.TotalPrice
       };
 

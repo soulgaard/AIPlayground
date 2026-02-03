@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokisChatApi", "BokisChatBo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokisChatApplication", "BokisChatApplication\BokisChatApplication.csproj", "{553CF415-EBF0-4D48-A96F-B51B2993D0A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeTranslatorCore", "CodeTranslatorCore\CodeTranslatorCore.csproj", "{9025E3BF-B070-4D34-8378-A0FAFB67FCB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{553CF415-EBF0-4D48-A96F-B51B2993D0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{553CF415-EBF0-4D48-A96F-B51B2993D0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{553CF415-EBF0-4D48-A96F-B51B2993D0A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9025E3BF-B070-4D34-8378-A0FAFB67FCB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9025E3BF-B070-4D34-8378-A0FAFB67FCB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9025E3BF-B070-4D34-8378-A0FAFB67FCB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9025E3BF-B070-4D34-8378-A0FAFB67FCB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

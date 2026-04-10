@@ -1,5 +1,6 @@
 ﻿using CodeTranslator;
 using DevExpress.Data.Helpers;
+using DevExpress.XtraEditors;
 using DevExpress.XtraSpreadsheet.Model.History;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace CodeTranslatorCore
 {
@@ -20,7 +22,7 @@ namespace CodeTranslatorCore
     private List<string> _validExtensions = new List<string>
     {
       "json",
-      
+
       "resx",
 
       "cs",
@@ -44,6 +46,7 @@ namespace CodeTranslatorCore
       @"C:\_WS\Chapter5\Chapter 5 - Grantet\GrantetWebApi",
       @"C:\_WS\Chapter5\Chapter 5 - Grantet\GrantetWorker",
       @"C:\_WS\Chapter5\Chapter 5 - Grantet Web\Chapter 5 - Foundas Web\src",
+      @"C:\_WS\Chapter5\Chapter 5 - Grantet Web\Chapter 5 - Foundas Web\src\views\Applicant\Apply",
 
     };
 
@@ -52,14 +55,15 @@ namespace CodeTranslatorCore
     /// </summary>
     private const string _sourceLanguage = "english";
     private const string _destLanguage = "german";
-    private const AIAgent.TranslationTypeType _translationType = AIAgent.TranslationTypeType.ResourceLanguageFiles;
+    private AIAgent.TranslationTypeType _translationType = AIAgent.TranslationTypeType.Vuei18nFiles;
 
     public FormTranslator()
     {
       InitializeComponent();
-      _translator = new AIAgent(_sourceLanguage, _destLanguage, _translationType);
+      _translator = null;
 
-      this.Text = $"Tranlator - {_sourceLanguage} to {_destLanguage} - for {_translationType}";
+      lookUpEditTranslationType.Properties.DataSource = Enum.GetValues(typeof(AIAgent.TranslationTypeType));
+      lookUpEditTranslationType.EditValue = _translationType;
 
       dateEditFilesBefore.DateTime = DateTime.Now.AddHours(-2);
       // Add predefined paths to checkedListBoxControlDirectories
@@ -67,16 +71,18 @@ namespace CodeTranslatorCore
       {
         comboBoxEditPredefinedPaths.Properties.Items.Add(path);
       }
+
+      ShowFilesFromDir(textSourcePath.Text);
     }
 
     private async void buttonTranslate_Click(object sender, EventArgs e)
     {
-      textTranslatedFiles.Text += "Start " + DateTime.Now.ToShortTimeString();
+      textLog.Text += "Start " + DateTime.Now.ToShortTimeString();
       textResult.Text = await _translator.TranslateCodeAsync(textSource.Text);
-      textTranslatedFiles.Text += " - Finished " + DateTime.Now.ToShortTimeString();
+      textLog.Text += " - Finished " + DateTime.Now.ToShortTimeString();
     }
 
-    private async void TranslateAllFilesInPath(List<string> pathlist, List<string> extensionlist)
+    private async Task<List<string>> Getfiles(List<string> pathlist, List<string> extensionlist)
     {
       string[] files = new string[] { };
 
@@ -88,7 +94,7 @@ namespace CodeTranslatorCore
         .Where(l => !l.ToLower().Contains("\\resources"))
         .ToList();
 
-        foreach (var path in pathlist)
+      foreach (var path in pathlist)
         foreach (var ext in extensionlist)
         {
           var filespath = System.IO.Directory.GetFiles(path, "*." + ext, System.IO.SearchOption.AllDirectories);
@@ -105,21 +111,29 @@ namespace CodeTranslatorCore
 
         .OrderBy(f => System.IO.File.GetLastWriteTime(f)).ToArray();
 
+      return files.ToList();
+    }
+
+
+    private async void TranslateAllFilesInPath(List<string> pathlist, List<string> extensionlist)
+    {
+      var files = await Getfiles(pathlist, extensionlist);
+
       var translated = 0;
       foreach (var file in files)
       {
         var changedDate = System.IO.File.GetLastWriteTime(file);
         var timer = DateTime.Now;
         var code = System.IO.File.ReadAllText(file);
-        
+
         if (changedDate > dateEditFilesBefore.DateTime)
         {
-          textTranslatedFiles.Text += ".";
+          textLog.Text += ".";
           //textTranslatedFiles.Text += " - skipped (not changed)" + Environment.NewLine;
         }
         else
         {
-          textTranslatedFiles.Text += $"{changedDate:d} {changedDate:t} {file} {code.Length} chars";
+          textLog.Text += $"{changedDate:d} {changedDate:t} {file} {code.Length} chars";
           _translator.ResetThread();
           try
           {
@@ -131,7 +145,7 @@ namespace CodeTranslatorCore
             System.IO.File.WriteAllText(file, translatedCode);
 
             var elapsed = DateTime.Now - timer;
-            textTranslatedFiles.Text += $" - done {(int)Math.Round(elapsed.TotalSeconds)} sec - {translatedCode.Length:n0} chars" + Environment.NewLine;
+            textLog.Text += $" - done {(int)Math.Round(elapsed.TotalSeconds)} sec - {translatedCode.Length:n0} chars" + Environment.NewLine;
 
             translated++;
           }
@@ -139,16 +153,16 @@ namespace CodeTranslatorCore
           {
             var elapsed = DateTime.Now - timer;
 
-            textTranslatedFiles.Text += $" - FAILED (timeout after {(int)Math.Round(elapsed.TotalSeconds)} seconds)" + Environment.NewLine;
-            textTranslatedFiles.Text += ex.Message + Environment.NewLine;
+            textLog.Text += $" - FAILED (timeout after {(int)Math.Round(elapsed.TotalSeconds)} seconds)" + Environment.NewLine;
+            textLog.Text += ex.Message + Environment.NewLine;
           }
         }
 
         // Scroll to end
-        textTranslatedFiles.SelectionStart = textTranslatedFiles.Text.Length;
-        textTranslatedFiles.ScrollToCaret();
+        textLog.SelectionStart = textLog.Text.Length;
+        textLog.ScrollToCaret();
       }
-      textTranslatedFiles.Text += $"Translation completed. {translated} files translated." + Environment.NewLine;
+      textLog.Text += $"Translation completed. {translated} files translated." + Environment.NewLine;
       //MessageBox.Show($"Translation completed. {translated} files translated.");
     }
 
@@ -187,21 +201,21 @@ namespace CodeTranslatorCore
 
     private void buttonTranslateAll_Click(object sender, EventArgs e)
     {
-      //var path = textSourcePath.Text;
-      var extensions = checkedListBoxControlExtensions.CheckedItems;
-      var paths = checkedListBoxControlDirectories.CheckedItems;
+      var pathList = GetSelectedStringList(checkedListBoxControlDirectories);
+      var extensionList = GetSelectedStringList(checkedListBoxControlExtensions);
+      TranslateAllFilesInPath(pathList, extensionList);
+    }
+
+    private List<string> GetSelectedStringList(CheckedListBoxControl listBox)
+    {
+      var items = listBox.CheckedItems;
 
       // get list of extensions
-      var extensionList = new List<string>();
-      foreach (var ext in extensions)
-        extensionList.Add(ext.ToString());
+      var itemList = new List<string>();
+      foreach (var ext in items)
+        itemList.Add(ext.ToString());
 
-      // get list of paths
-      var pathList = new List<string>();
-      foreach (var path in paths)
-        pathList.Add(path.ToString());
-
-      TranslateAllFilesInPath(pathList, extensionList);
+      return itemList;
     }
 
     private void comboBoxEditPredefinedPaths_SelectedIndexChanged(object sender, EventArgs e)
@@ -216,6 +230,135 @@ namespace CodeTranslatorCore
       for (int i = 0; i < checkedListBoxControlDirectories.Items.Count; i++)
       {
         checkedListBoxControlDirectories.SetItemChecked(i, false);
+      }
+    }
+
+    private void buttonBrowse_Click(object sender, EventArgs e)
+    {
+      var dialog = new FolderBrowserDialog();
+      dialog.Description = "Select a folder";
+      dialog.InitialDirectory = textSourcePath.Text;
+      dialog.UseDescriptionForTitle = true; // Shows description as window title (.NET 5+)
+
+      if (dialog.ShowDialog() == DialogResult.OK)
+      {
+        textSourcePath.Text = dialog.SelectedPath;
+
+        ShowFilesFromDir(dialog.SelectedPath);
+      }
+    }
+
+    private void ShowFilesFromDir(string selectedPath)
+    {
+      var files = System.IO.Directory.GetFiles(selectedPath, "*.*", System.IO.SearchOption.TopDirectoryOnly);
+      var fileList = files.ToList().OrderBy(l => l).ToList();
+      checkedListBoxControlFiles.Items.Clear();
+
+      foreach (var item in fileList)
+      {
+        checkedListBoxControlFiles.Items.Add(item, false);
+      }
+    }
+
+    private void buttonVueLocalizable_Click(object sender, EventArgs e)
+    {
+      var files = GetSelectedStringList(checkedListBoxControlFiles);
+
+      if (files.Count == 0)
+      {
+        MessageBox.Show("Please select a file to translate.");
+        return;
+      }
+      LogLine($"Translating {files.Count} files...");
+
+      foreach (var file in files)
+        LocalizeVueFile(file);
+
+      // Translation is running asynchronously, so we do not wait for it to finish here. The results will be logged as they come in.
+    }
+
+    private async void LocalizeVueFile(string file)
+    {
+      var timer = DateTime.Now;
+      var code = System.IO.File.ReadAllText(file);
+      var fileNoPath = System.IO.Path.GetFileName(file);
+
+      LogLine($"{file} {code.Length} chars -  running");
+
+      _translator.ResetThread();
+      try
+      {
+        var translatedCode = await _translator.TranslateCodeAsync(code);
+        translatedCode = translatedCode.Replace("\r\n", "\n").Replace("\n", "\r\n"); // Normalize line endings
+                                                                                     // Ensure ending line break
+        translatedCode = translatedCode.TrimEnd() + Environment.NewLine;
+        var codesplit = translatedCode.Split("--TranslatedJson--", StringSplitOptions.RemoveEmptyEntries);
+
+        var vueCode = codesplit[0];
+        if (codesplit.Length > 1)
+        {
+          var jsonCode = codesplit[1];
+          var jsonFile = @"C:\_WS\Chapter5\Chapter 5 - Grantet Web\Chapter 5 - Foundas Web\src\assets\localization\en.json";
+          //var jsonFile = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(file), System.IO.Path.GetFileNameWithoutExtension(file) + ".json");
+          System.IO.File.AppendAllText(jsonFile, jsonCode);
+          //LogLine(jsonCode);
+
+          textResult.Text += jsonCode + Environment.NewLine;
+        }
+
+        System.IO.File.WriteAllText(file, vueCode);
+
+        var elapsed = DateTime.Now - timer;
+        LogLine($" - {fileNoPath} done {(int)Math.Round(elapsed.TotalSeconds)} sec - {translatedCode.Length:n0} chars");
+      }
+      catch (System.AggregateException ex)
+      {
+        var elapsed = DateTime.Now - timer;
+
+        LogLine($" - FAILED (timeout after {(int)Math.Round(elapsed.TotalSeconds)} seconds)");
+        LogLine(ex.Message);
+      }
+    }
+
+    private void LogLine(string txt)
+    {
+      textLog.Text += txt + Environment.NewLine;
+    }
+
+    private async void buttonShowFiles_Click(object sender, EventArgs e)
+    {
+      var pathList = GetSelectedStringList(checkedListBoxControlDirectories);
+      var extensionList = GetSelectedStringList(checkedListBoxControlExtensions);
+      var files = await Getfiles(pathList, extensionList);
+      checkedListBoxControlFiles.Items.Clear();
+
+      foreach (var item in files)
+      {
+        checkedListBoxControlFiles.Items.Add(item, false);
+      }
+    }
+
+    private void lookUpEditTranslationType_EditValueChanged(object sender, EventArgs e)
+    {
+      if (lookUpEditTranslationType.EditValue == null)
+      {
+        this.Text = "Awaiting translation type selection...";
+        _translator = null;
+      }
+      else
+      {
+        _translationType = (AIAgent.TranslationTypeType)lookUpEditTranslationType.EditValue;
+        _translator = new AIAgent(_sourceLanguage, _destLanguage, _translationType);
+        this.Text = $"Tranlator - {_sourceLanguage} to {_destLanguage} - for {_translationType}";
+      }
+    }
+
+    private void buttonCheckAllFiles_Click(object sender, EventArgs e)
+    {
+      for (int i = 0; i < checkedListBoxControlFiles.Items.Count; i++)
+      {
+        var val = checkedListBoxControlFiles.GetItemChecked(i);
+        checkedListBoxControlFiles.SetItemChecked(i, !val);
       }
     }
   }

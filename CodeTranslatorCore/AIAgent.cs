@@ -30,7 +30,8 @@ namespace CodeTranslator
       /// Used for json language files
       /// </summary>
       JsonVueLanguageFiles,
-      ResourceLanguageFiles
+      ResourceLanguageFiles,
+      Vuei18nFiles
     }
 
     public AIAgent(string sourceLanguage, string destLanguage, TranslationTypeType translationType)
@@ -80,6 +81,23 @@ Translate only in the content of value fields. Never change or translate in the 
     <value>text to translate</value>
   </data>
 Only return valid code";
+          break;
+          case TranslationTypeType.Vuei18nFiles:
+          instructions = @$"You are a vue code developer.
+The following code is a vue file and it should be changed to support i18n.
+meaning it can import the i18n plugin - but only if needed for changes in the script part: 
+import i18n from '@/i18n'
+
+All strings in scripts should be changed to i18n.t('key') where key is a unique key representing the string in translation files.
+All strings in the template should be changed to use the i18n componen like this: $t('key')
+
+Change all texts that are user visible and should be translated. Do not change code syntax, variable names, comments etc.
+Output should only be the modified code, do not include any explanations or comments.
+If there are translations to the file, after the translated vue file, return a new entry to the translation file in the format:
+""key"": ""Original text"",
+
+Seperate translated file and entries to the translation file with a line: ""--TranslatedJson--""
+";
           break;
         default:
           throw new NotImplementedException();

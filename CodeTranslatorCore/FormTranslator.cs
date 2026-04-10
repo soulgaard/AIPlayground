@@ -19,6 +19,10 @@ namespace CodeTranslatorCore
 
     private List<string> _validExtensions = new List<string>
     {
+      "json",
+      
+      "resx",
+
       "cs",
       "js",
       "ts",
@@ -43,10 +47,19 @@ namespace CodeTranslatorCore
 
     };
 
+    /// <summary>
+    /// Here you can set language and translation type.
+    /// </summary>
+    private const string _sourceLanguage = "english";
+    private const string _destLanguage = "german";
+    private const AIAgent.TranslationTypeType _translationType = AIAgent.TranslationTypeType.ResourceLanguageFiles;
+
     public FormTranslator()
     {
       InitializeComponent();
-      _translator = new AIAgent("danish", "english");
+      _translator = new AIAgent(_sourceLanguage, _destLanguage, _translationType);
+
+      this.Text = $"Tranlator - {_sourceLanguage} to {_destLanguage} - for {_translationType}";
 
       dateEditFilesBefore.DateTime = DateTime.Now.AddHours(-2);
       // Add predefined paths to checkedListBoxControlDirectories
@@ -58,7 +71,9 @@ namespace CodeTranslatorCore
 
     private async void buttonTranslate_Click(object sender, EventArgs e)
     {
+      textTranslatedFiles.Text += "Start " + DateTime.Now.ToShortTimeString();
       textResult.Text = await _translator.TranslateCodeAsync(textSource.Text);
+      textTranslatedFiles.Text += " - Finished " + DateTime.Now.ToShortTimeString();
     }
 
     private async void TranslateAllFilesInPath(List<string> pathlist, List<string> extensionlist)
@@ -96,13 +111,15 @@ namespace CodeTranslatorCore
         var changedDate = System.IO.File.GetLastWriteTime(file);
         var timer = DateTime.Now;
         var code = System.IO.File.ReadAllText(file);
-        textTranslatedFiles.Text += $"{changedDate:d} {changedDate:t} {file} {code.Length} chars";
+        
         if (changedDate > dateEditFilesBefore.DateTime)
         {
-          textTranslatedFiles.Text += " - skipped (not changed)" + Environment.NewLine;
+          textTranslatedFiles.Text += ".";
+          //textTranslatedFiles.Text += " - skipped (not changed)" + Environment.NewLine;
         }
         else
         {
+          textTranslatedFiles.Text += $"{changedDate:d} {changedDate:t} {file} {code.Length} chars";
           _translator.ResetThread();
           try
           {

@@ -92,7 +92,12 @@ All strings in scripts should be changed to i18n.t('key') where key is a unique 
 All strings in the template should be changed to use the i18n componen like this: $t('key')
 
 Change all texts that are user visible and should be translated. Do not change code syntax, variable names, comments etc.
-Output should only be the modified code, do not include any explanations or comments.
+Output should only be the modified code, do not include any explanations or comments. Do not change anything in regards to routes. 
+Do not alter anything already prepared for i18n, only add to it if needed. 
+If the code already contains i18n translations, do not change them, only add new ones for the new translations you make.
+Do not change text inside {{ }} as they are variables. 
+Do not change text inside v-bind: or : as they are variables. Do not change text inside v-if or similar, as they are conditions.
+
 If there are translations to the file, after the translated vue file, return a new entry to the translation file in the format:
 ""key"": ""Original text"",
 

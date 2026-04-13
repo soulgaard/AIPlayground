@@ -118,7 +118,10 @@ namespace CodeTranslatorCore
     private async void TranslateAllFilesInPath(List<string> pathlist, List<string> extensionlist)
     {
       var files = await Getfiles(pathlist, extensionlist);
-
+      TranslateFiles(files);
+    }
+    private async void TranslateFiles(List<string> files)
+    {
       var translated = 0;
       foreach (var file in files)
       {
@@ -133,7 +136,7 @@ namespace CodeTranslatorCore
         }
         else
         {
-          textLog.Text += $"{changedDate:d} {changedDate:t} {file} {code.Length} chars";
+          Log($"{changedDate:d} {changedDate:t} {file} {code.Length} chars");
           _translator.ResetThread();
           try
           {
@@ -145,7 +148,7 @@ namespace CodeTranslatorCore
             System.IO.File.WriteAllText(file, translatedCode);
 
             var elapsed = DateTime.Now - timer;
-            textLog.Text += $" - done {(int)Math.Round(elapsed.TotalSeconds)} sec - {translatedCode.Length:n0} chars" + Environment.NewLine;
+            LogLine($" - done {(int)Math.Round(elapsed.TotalSeconds)} sec - {translatedCode.Length:n0} chars");
 
             translated++;
           }
@@ -153,16 +156,16 @@ namespace CodeTranslatorCore
           {
             var elapsed = DateTime.Now - timer;
 
-            textLog.Text += $" - FAILED (timeout after {(int)Math.Round(elapsed.TotalSeconds)} seconds)" + Environment.NewLine;
-            textLog.Text += ex.Message + Environment.NewLine;
+            LogLine($" - FAILED (timeout after {(int)Math.Round(elapsed.TotalSeconds)} seconds)");
+            LogLine(ex.Message);
           }
         }
 
         // Scroll to end
-        textLog.SelectionStart = textLog.Text.Length;
-        textLog.ScrollToCaret();
+        //textLog.SelectionStart = textLog.Text.Length;
+        //textLog.ScrollToCaret();
       }
-      textLog.Text += $"Translation completed. {translated} files translated." + Environment.NewLine;
+      LogLine($"Translation completed. {translated} files translated.");
       //MessageBox.Show($"Translation completed. {translated} files translated.");
     }
 
@@ -201,9 +204,8 @@ namespace CodeTranslatorCore
 
     private void buttonTranslateAll_Click(object sender, EventArgs e)
     {
-      var pathList = GetSelectedStringList(checkedListBoxControlDirectories);
-      var extensionList = GetSelectedStringList(checkedListBoxControlExtensions);
-      TranslateAllFilesInPath(pathList, extensionList);
+      var files = GetSelectedStringList(checkedListBoxControlFiles);
+      TranslateFiles(files);
     }
 
     private List<string> GetSelectedStringList(CheckedListBoxControl listBox)
@@ -323,6 +325,10 @@ namespace CodeTranslatorCore
     private void LogLine(string txt)
     {
       textLog.Text += txt + Environment.NewLine;
+    }
+    private void Log(string txt)
+    {
+      textLog.Text += txt;
     }
 
     private async void buttonShowFiles_Click(object sender, EventArgs e)
